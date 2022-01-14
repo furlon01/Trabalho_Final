@@ -1,0 +1,140 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Cadastro Pacientes";
+}
+@{
+    var nome = "";
+    var cpf = "";
+    var age_diagnostic = "";
+    var post_menopause = "";
+    var er_status = "";
+    var her2_status = "";
+    var ki = "";
+    var invasive_tumour_size = "";
+    var tumour_grade = "";
+    var dected_by = "";
+    var positive_nodes = "";
+    var hormone_therapy = "";
+    var radio_therapy = "";
+    var chemo_therapy = "";
+    var tratzumab = "";
+
+    if (IsPost)
+    {
+        nome = Request.Form["Nome"];
+        cpf = Request.Form["CPF"];
+        age_diagnostic = Request.Form["age_diagnostic"];
+        post_menopause = Request.Form["post_menopause"];
+        er_status = Request.Form["Er_status"];
+        her2_status = Request.Form["Her2"];
+        ki = Request.Form["Ki_Status"];
+        invasive_tumour_size = Request.Form["Tummor_size"];
+        tumour_grade = Request.Form["tummor_grade"];
+        dected_by = Request.Form["detected"];
+        positive_nodes = Request.Form["positive_nodes"];
+        hormone_therapy = Request.Form["hormone_terapy"];
+        radio_therapy = Request.Form["radiotherapy"];
+        chemo_therapy = Request.Form["chemotherapy"];
+        tratzumab = Request.Form["tratzumab"];
+    }
+}
+<div class="text-center">
+    <h1 class="display-4">Cadastro de Pacientes</h1>
+
+    <form method="post" action="">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="cpf" placeholder="CPF">
+    </form>
+    <br>
+    <form method="post" action="">
+        <label>Idade: </label>
+        <input type="text" id="age_diagnostic" name="age_diagnostic">
+        <br>
+        <label>Post Menopause: </label>
+        <input type="radio" id="Sim" name="post_menopause" value="1">
+        <label for="Sim">Sim</label><br>
+        <input type="radio" id="Não" name="post_menopause" value="0">
+        <label for="Não">Não</label><br>
+        <input type="radio" id="NS" name="post_menopause" value="">
+        <label for="Não informado">Não Informado</label><br>
+        <br>
+        <label for="">ER Status: </label>
+        <input type="radio" id="Sim" name="Er_status" value="1">
+        <label for="Sim">Positivo</label><br>
+        <input type="radio" id="Não" name="Er_status" value="0">
+        <label for="Não">Negativo</label><br>
+
+        <br>
+        <label for="">HER2 Status: </label>
+        <input type="radio" id="Sim" name="Her2" value="1">
+        <label for="Sim">Positivo</label><br>
+        <input type="radio" id="Não" name="Her2" value="0">
+        <label for="Não">Negativo</label><br>
+        <input type="radio" id="NS" name="Her2" value="">
+        <label for="Não informado">Não Informado</label><br>
+
+        <br>
+        <label for="">Ki-67 Status: </label>
+        <input type="radio" id="Sim" name="Ki_Status" value="1">
+        <label for="Sim">Positivo</label><br>
+        <input type="radio" id="Não" name="Ki_Status" value="0">
+        <label for="Não">Negativo</label><br>
+        <input type="radio" id="NS" name="Ki_Status" value="">
+        <label for="Não informado">Não Informado</label><br>
+        <br>
+
+        <label for="">Invasive Tumour Size: </label>
+        <input type="text" id="Tummor_size" name="Tummor_size">
+        <br>
+
+        <label for="">Tumour Grade: </label>
+        <input type="text" id="tummor_grade" name="tummor_grade">
+        <br>
+
+        <label for="">Detected by: </label>
+        <input type="radio" id="Screening" name="detected" value="Screening">
+        <label for="Screening">Screening</label><br>
+        <input type="radio" id="Symptoms" name="detected" value="Symptoms">
+        <label for="Symptoms">Symptoms</label><br>
+        <input type="radio" id="NS" name="detected" value="Não Informado">
+        <label for="Não informado">Não Informado</label><br>
+        <br>
+
+        <label for="">Positive Nodes: </label>
+        <input type="text" id="positive_nodes" name="positive_nodes">
+        <br>
+
+        <label for="">Hormone Therapy: </label>
+        <input type="radio" id="No" name="hormone_terapy" value="No">
+        <label for="No">No</label><br>
+        <input type="radio" id="5 Years" name="hormone_terapy" value="5 Years">
+        <label for="5 Years">5 Years</label><br>
+        <input type="radio" id="10 Years" name="hormone_terapy" value="10 Years">
+        <label for="10 Years">10 Years</label>
+        <br>
+
+        <label for="">Chemo Therapy: </label>
+        <input type="radio" id="None" name="chemotherapy" value="None">
+        <label for="None">None</label><br>
+        <input type="radio" id="2nd gen" name="chemotherapy" value="2nd gen">
+        <label for="2nd gen">2nd gen</label><br>
+        <input type="radio" id="3nd gen" name="chemotherapy" value="3nd gen">
+        <label for="3nd gen">3nd gen</label>
+        <br>
+
+        <label for="">Radio Therapy: </label>
+        <input type="radio" id="Sim" name="radiotherapy" value="1">
+        <label for="Sim">Sim</label><br>
+        <input type="radio" id="Não" name="radiotherapy" value="0">
+        <label for="Não">Não</label><br>
+
+        <label for="">Tratzumab: </label>
+        <input type="radio" id="Sim" name="tratzumab" value="1">
+        <label for="Sim">Sim</label><br>
+        <input type="radio" id="Não" name="tratzumab" value="0">
+        <label for="Não">Não</label><br>
+        <button>Enviar</button>
+    </form>
+
+</div>
